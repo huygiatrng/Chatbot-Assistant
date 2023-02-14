@@ -1,1 +1,1 @@
-# SimpleChatbot
+# SimpleChatbot-Django

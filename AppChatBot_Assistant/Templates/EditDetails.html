@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+{% block content%}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+{% endfor %}
+{% endif %}
+<div style="background-image: url('/media/bg8.jpg'); background-repeat:no-repeat;background-size:cover;  height:600px; width: 100;">
+
+<div class="container">
+            <form class="form-signin" action="/EditDetails/" method="POST">
+                {% csrf_token %}
+            <div class="row">
+                <div class="col-8">
+                    <br><br>
+                    {% for u in user %}
+                    <div class="row">
+                        <div class="col-8">
+                            <u><h5 style="color:white" align="center">Edit Details here!</u></h5>
+                        </div>
+                    </div> <br><br>
+                     <div class="row">
+                        <div class="col-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="U_id" name="U_id" placeholder="Enter first name" value="{{u.id}}" readonly="">
+                                <label for="floatingInput" style="color:darkblue;">ID :</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" name="fname" placeholder="Enter first name" value="{{u.Firstname}}">
+                                <label for="floatingInput" style="color:darkblue;">First Name:</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                               <input type="text" class="form-control" id="floatingPassword" placeholder="Enter last name" name="lname" value="{{u.Lastname}}">
+                               <label for="floatingPassword" style="color:darkblue;">Last Name:</label> 
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                     <div class="row">
+                        <div class="col-4">
+                            <div class="form-floating mb-3">
+                                 <input type="number" class="form-control" id="floatingInput" placeholder="Enter Contact Number" name="phone" value="{{u.Number}}">
+                                 <label for="floatingInput" style="color:darkblue">Contact Number:</label>
+                             </div>
+                         </div>
+                     
+                        <div class="col-4">
+                            <div class="form-floating">
+                               <input type="email" class="form-control" id="floatingPassword" placeholder="Enter last name" name="Eid" value="{{u.Email}}">
+                               <label for="floatingPassword" style="color:darkblue;">Email:</label> 
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                     <div class="row">
+                        <div class="col-4">
+                            <div class="form-floating mb-3">
+                                 <input type="text" class="form-control" id="floatingInput" placeholder="Enter Contact Number" name="uname" value="{{u.Username}}" readonly="">
+                                 <label for="floatingInput" style="color:darkblue">Create Username:</label>
+                             </div>
+                         </div> 
+                     
+                        <div class="col-4">
+                            <div class="form-floating">
+                               <input type="password" class="form-control" id="floatingPassword" placeholder="Enter last name" name="pwd" value="{{u.Password}}">
+                               <label for="floatingPassword" style="color:darkblue;">Create Password:</label> 
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-8">
+                            <center><input type="submit" class="btn btn-outline-light" value="Update"></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        {% endfor %}
+        </div>
+	
+</div>
+<br>
+{% endblock %}

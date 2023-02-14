@@ -1,1 +1,1 @@
-# SimpleChatbot-Django
+# Chatbot Assistant - Django

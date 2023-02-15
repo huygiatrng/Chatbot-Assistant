@@ -9,10 +9,10 @@ The chatbot assistant will have the following features:
 
 **Setup**
 
-+Install libraries:
++ Install libraries:
 <pre> pip install requirements.txt </pre>
 
-+Install NLTK-Natural Language Toolkit
++ Install NLTK-Natural Language Toolkit
 <pre>python
 >>> import nltk
 >>> nltk.download('punkt') 

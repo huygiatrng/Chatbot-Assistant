@@ -18,3 +18,5 @@ The chatbot assistant will have the following features:
 >>> nltk.download('punkt') 
 >>> nltk.download('wordnet')
 </pre>
+
+**+ You also need to prepare data by creating .json file**

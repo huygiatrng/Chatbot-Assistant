@@ -10,5 +10,9 @@ The chatbot assistant will have the following features:
 Install libraries:
 <pre> pip install requirements.txt </pre>
 
-<pre> import nltk
-nltk.download('punkt') </pre>
+Install NLTK-Natural Language Toolkit
+<pre>python
+>>> import nltk
+>>> nltk.download('punkt') 
+>>> nltk.download('wordnet')
+</pre>

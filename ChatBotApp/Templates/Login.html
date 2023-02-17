@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+    {% block content%}
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+    <div style="background: url('/media/bg8.jpg'); background-repeat:no-repeat;background-size:cover; color: white; height:600px; width: 100;">
+        <br>
+        <br>
+        <br>
+        <div class="container">
+             <form class="form-signin" action="/Login/" method="POST">
+                {% csrf_token %}
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <u><h5 style="color:white" align="center">User SignIn</u></h5>
+                        </div>
+                    </div> <br><br>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Enter first name" name="uname">
+                                <label for="floatingInput" style="color:darkblue;">Username:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row"> 
+                       <div class="col-6">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Enter last name" name="pwds">
+                                <label for="floatingPassword" style="color:darkblue;">Password:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row"> 
+                        <div class="col-6">
+                            <a href="/Registeration/"><u><label for="customCheck1" style="color:white;">New User/Register</label></u></a>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <center><input type="submit" class="btn btn-outline-light" value="Sign In"></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    
+
+    <br>
+
+    {% endblock%}
